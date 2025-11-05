@@ -19,15 +19,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                // 🔒 вимикаємо CSRF для REST API (актуальний синтаксис)
                 .csrf(AbstractHttpConfigurer::disable)
 
-                // 🔐 усі запити потребують авторизації
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().authenticated()
                 )
 
-                // 🧾 базова авторизація (admin/admin)
                 .httpBasic(httpBasic -> {})
                 .build();
     }
