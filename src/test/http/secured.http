@@ -1,0 +1,61 @@
+### GET all items
+GET http://localhost:8080/api/v1/items
+Authorization: Basic admin admin
+Accept: application/json
+###
+
+### GET one items
+GET http://localhost:8080/api/v1/items/1
+Authorization: Basic admin admin
+Accept: application/json
+###
+
+### GET user
+GET http://localhost:8080/api/v1/items/hello/user
+Authorization: Basic admin admin
+Accept: application/json
+###
+
+### GET admin
+GET http://localhost:8080/api/v1/items/hello/admin
+Authorization: Basic admin admin
+Accept: application/json
+###
+
+### GET unknown
+GET http://localhost:8080/api/v1/items/hello/unknown
+Authorization: Basic admin admin
+Accept: application/json
+###
+
+### DELETE one items
+DELETE http://localhost:8080/api/v1/items/2
+Authorization: Basic admin admin
+Accept: application/json
+###
+
+### CREATE one items
+POST http://localhost:8080/api/v1/items
+Authorization: Basic YWRtaW46YWRtaW4=
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "name4",
+  "description": "d4"
+}
+###
+
+### UPDATA one items
+PUT http://localhost:8080/api/v1/items
+Content-Type: application/json
+Authorization: Basic admin admin
+Accept: application/json
+
+{
+  "id": "1",
+  "name": "newname1",
+  "description": "newd1"
+}
+###
+
