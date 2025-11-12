@@ -1,3 +1,103 @@
+### 1 GET /index.html
+GET http://localhost:8080/index.html
+Accept: text/html
+###
+
+### 2 GET /api/v1/items — доступ для USER
+GET http://localhost:8080/api/v1/items
+Authorization: Basic user user
+Accept: application/json
+###
+
+### 3 GET /api/v1/items — доступ для ADMIN
+GET http://localhost:8080/api/v1/items
+Authorization: Basic admin admin
+Accept: application/json
+###
+
+### 4 GET /api/v1/items — доступ для SUPERADMIN
+GET http://localhost:8080/api/v1/items
+Authorization: Basic superadmin superadmin
+Accept: application/json
+###
+
+### 5 GET /api/v1/items/{id} — доступ USER
+GET http://localhost:8080/api/v1/items/1
+Authorization: Basic user user
+Accept: application/json
+###
+
+### 6 GET /api/v1/items/hello/user — доступ USER
+GET http://localhost:8080/api/v1/items/hello/user
+Authorization: Basic user user
+Accept: text/plain
+###
+
+### 7 GET /api/v1/items/hello/admin — доступ ADMIN
+GET http://localhost:8080/api/v1/items/hello/admin
+Authorization: Basic admin admin
+Accept: text/plain
+###
+
+### 8 GET /api/v1/items/hello/superadmin — доступ SUPERADMIN
+GET http://localhost:8080/api/v1/items/hello/superadmin
+Authorization: Basic superadmin superadmin
+Accept: text/plain
+###
+
+### 9 Спроба зайти з ADMIN до SUPERADMIN
+GET http://localhost:8080/api/v1/items/hello/superadmin
+Authorization: Basic admin admin
+Accept: text/plain
+###
+
+### 10 Спроба створити користувача через ADMIN
+POST http://localhost:8080/api/v1/items/create
+Authorization: Basic admin admin
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "name10",
+  "description": "d10"
+}
+###
+
+### 11 Спроба створити користувача через USER
+POST http://localhost:8080/api/v1/items/create
+Authorization: Basic user user
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "name10",
+  "description": "d10"
+}
+###
+
+### 12 DELETE /api/v1/items/delete/{id} — видалення SUPERADMIN
+DELETE http://localhost:8080/api/v1/items/delete/1
+Authorization: Basic superadmin superadmin
+Accept: application/json
+###
+
+### 13 DELETE /api/v1/items/delete/{id} — видалення ADMIN
+DELETE http://localhost:8080/api/v1/items/delete/1
+Authorization: Basic admin admin
+Accept: application/json
+###
+
+
+
+
+
+
+
+
+
+
+
+
 ### GET all items
 GET http://localhost:8080/api/v1/items
 Authorization: Basic admin admin

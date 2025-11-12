@@ -33,12 +33,14 @@ public class ItemRestController {
         return service.getById(id);
     }
 
-    @DeleteMapping("/{id}")
+
+
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable String id) {
         service.deleteById(id);
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Item create(@RequestBody Item item) {
         return service.create(item);
     }
@@ -58,9 +60,9 @@ public class ItemRestController {
         return "Hello Admin";
     }
 
-    @GetMapping("/hello/unknown")
+    @GetMapping("/hello/superadmin")
     public String helloUnknown() {
-        return "Hello Unknown";
+        return "Hello Super Admin";
     }
 
 //    @RestController
