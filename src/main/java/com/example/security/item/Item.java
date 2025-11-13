@@ -17,7 +17,7 @@ import java.util.Objects;
 
 
 @Document
-public class Item {
+public class Item extends AuditMetaData {
 
     @Id
     private String id;
